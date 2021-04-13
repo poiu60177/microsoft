@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', SegoeUI, 'Microsoft JhengHei', 微軟正黑體, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 13px;
+        }
+
+
+        .clearfix {
+            clear: both;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        nav {
+            width: 100%;
+            height: 54px;
+            background-color: blue; 
+            
+           
+
+        }
+
+        nav .container {
+            background-color: blueviolet;
+            max-width: calc(10% + 1600px);
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 5%;
+            margin-bottom: 2px;
+        }
+        .nav-micrologo{
+            float: left;
+            width: 137px;
+            height: 54px;
+            background-image: url(./img/microsoft.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            
+
+        }
+        .navbar-center{
+            float: left;
+            height: 100%;
+            padding: 0 1px 0 2px;
+
+
+        }
+        .navbar-center li{
+            float: left;
+            margin: 1px 4px 0;
+            padding: 16px 8px 10px;
+        }
+        .navbar-center ul .more{
+            display: none;
+        }
+        .navbar-right{
+            display: flex;
+            justify-content:flex-end;
+            height: 100%;
+            width: 406px;
+            float: right;
+        }
+        .navbar-right ul{
+            float: left;
+        }
+        .navbar-right li{
+            float: left;
+            padding: 16px 0px 10px;
+
+        }
+        .navbar-right li img{
+            height: 15px;
+        }
+        .login-logo{
+            float: left;
+            margin: 8px ;
+            width: 32px;
+            height: 32px;
+            background-image: url(./img/logo.jpg);
+        }
+        .navbar-right ul .all {
+            margin-right: 30px;
+        }
+
+        .navbar-right ul .search {
+            margin-right: 35px;
+        }
+
+        .navbar-right ul .cart {
+            margin-right: 13px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-micrologo"></div>
+            <div class="navbar-center">
+                <ul class="nav-list">
+                    <li>Microsoft 365</li>
+                    <li>Office</li>
+                    <li>Windows</li>
+                    <li class="Surface">Surface</li>
+                    <li class="Xbox">XboX</li>
+                    <li class="help">支援</li>
+                    <li class="more"><span>更多</span><img src="./img/down.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div id="nav-right">
+                    
+                    <ul>
+                        <li class="all">
+                            <span>所有 Microsoft</span>
+                            <img src="./img/down.jpg" alt="">
+                        </li>
+                        <li class="search">
+                            <span class=" nav-left-3">搜尋</span>
+                            <img class="nav-right-icon" src="./img/search 02.jpg" alt="">
+                        </li>
+                        <li class="cart">
+                            <span class="nav-left-3">購物車</span>
+                            <img class="nav-right-icon" src="./img/cart 02.jpg" alt="">
+
+                        </li>
+                        <li>
+                            <span class="login nav-left-3">登入</span>
+                            
+                        </li>
+                    </ul>
+                   <div class="login-logo"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <body>
+
+    </body>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

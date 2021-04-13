@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', SegoeUI, 'Microsoft JhengHei', 微軟正黑體, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 13px;
+        }
+
+
+        .clearfix {
+            clear: both;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        #nav {
+            background-color: rgb(255, 255, 255);
+            height: 54px;
+            width: 100%;
+            max-width: calc(10% + 1600px);
+            margin: auto;
+            margin-bottom: 2px;
+            padding: 0 5%;
+        }
+
+        #nav .container {
+
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+
+
+        .nav-logo {
+            height: 54px;
+            width: 137px;
+            background-color: transparent;
+            float: left;
+            background-image: url(./img/microsoft.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+
+
+        }
+
+        #nav-center {
+            height: 100%;
+            width: calc(100% - 539px);
+            padding: 0 1px 0 2px;
+            float: left;
+
+
+        }
+
+        #nav-center .nav-list li {
+            float: left;
+            margin: 1px 4px 0 4px;
+            padding: 16px 8px 10px;
+            border: 1px white solid;
+
+        }
+
+        #nav-center .nav-list .more {
+            display: none;
+        }
+
+
+
+
+
+        .nav-list li:hover {
+            text-decoration: black 2px underline;
+        }
+
+        #nav-right {
+            height: 100%;
+            width: 397px;
+            float: right;
+
+        }
+
+        #nav-right ul {
+            float: right;
+        }
+
+
+        .nav-right-logo {
+            width: 32px;
+            height: 32px;
+            margin: 8px;
+            float: left;
+            background-image: url(./img/logo.jpg);
+            background-position: center;
+
+        }
+
+        #nav-right .nav-list li {
+            float: left;
+            padding: 16px 0px 10px;
+        }
+
+        #nav li img {
+            height: 15px;
+
+        }
+
+        #nav-right ul .all {
+            margin-right: 30px;
+        }
+
+        #nav-right ul .search {
+            margin-right: 35px;
+        }
+
+        #nav-right ul .cart {
+            margin-right: 13px;
+        }
+
+        #nav-right ul .login:hover {
+            text-decoration: none;
+        }
+
+        #nav2 {
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            height: 54px;
+            width: 100%;
+            padding: 2px 0;
+            display: none;
+        }
+
+        .left-bottom {
+            width: 48px;
+            height: 48px;
+            float: left;
+            padding: 6px 0 8px;
+            margin: 1px 2px;
+            background-image: url(./img/line.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .nav2-right {
+            position: relative;
+            float: left;
+            height: 49px;
+            width: calc(100% - 52px);
+        }
+
+        #nav2 .nav-logo {
+            width: 116px;
+            height: 44px;
+            z-index: 5;
+            position: absolute;
+            left: calc(50% - 58px);
+            top: 0%
+        }
+
+        #nav2 .search {
+            position: absolute;
+            top: calc(50% - 16px);
+            left: 1px;
+            width: 34px;
+            height: 32px;
+            margin: 2px 6px 1px 2px;
+            padding: 8px 8px 8px 0;
+            background-image: url(./img/search.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #nav2 .cart {
+            position: absolute;
+            right: 60px;
+            width: 48px;
+            height: 48px;
+            padding: 15px 10px;
+            margin: 0 1px;
+            background-image: url(./img/cart.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        #nav2 .login {
+            width: 32px;
+            height: 32px;
+            padding: 15px 10px;
+            background-image: url(./img/logo.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            float: right;
+            margin: 8px 15px 8px 8px;
+        }
+
+        .hide-menu {
+            background-color: rgb(242, 242, 242);
+            width: 1230px;
+            z-index: 100;
+            position: absolute;
+            margin-left: -955px;
+            margin-top: 51px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+
+        .see-map {
+            width: 100%;
+            padding: 1px;
+            background-color: rgb(230, 230, 230);
+            display: flex;
+            align-content: center;
+            height: 38px;
+            border-bottom: 2px black solid;
+        }
+
+        .map {
+
+            margin: auto;
+        }
+
+        .map:hover {
+            text-decoration: 1px black underline;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        #nav-right .nav-list #all-menu {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #all-btn:checked~.hide-menu {
+            display: flex;
+        }
+
+        #nav-right .hide-menu1 {
+            float: left;
+            padding: 0%;
+        }
+
+        #nav-right .hide-menu1 li {
+            float: none;
+            padding: 12px 0 12px 24px;
+            width: 195px;
+        }
+
+        #nav-right .hide-menu1 li:nth-child(1) {
+            float: none;
+            padding: 18px 0 18px 24px;
+            font-weight: 600;
+        }
+
+        #nav-right .hide-menu1 li:nth-child(1):hover {
+            text-decoration: none;
+
+        }
+
+        main {
+            width: 100%;
+            margin: auto;
+            max-width: 1789.5px;
+
+        }
+
+        #main-part1 {
+            max-width: 2048px;
+            padding: 0 5%;
+            width: 100%;
+
+        }
+
+
+
+
+        #main-part1 .advertise {
+            width: 100%;
+            position: relative;
+
+        }
+
+        #main-part1 .advertise .ad-pic-word {
+            width: 88%;
+            position: absolute;
+            top: 50%;
+            left: 6%;
+            transform: translate(0, -50%);
+
+        }
+
+        #main-part1 .advertise .ad-pic-word .title {
+            margin: -3px 0 0 0;
+            padding: 0 0 3px 0;
+            font-size: 34px;
+            font-weight: 600;
+
+        }
+
+        #main-part1 .advertise .ad-pic-word .text {
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: 400;
+
+        }
+
+
+
+        #main-part1 .advertise .ad-pic-word .buynow {
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 12px 2px 0 0;
+            height: 55px;
+            color: white;
+            display: flex;
+
+        }
+
+        #main-part1 .advertise .ad-pic-word .buynow>div {
+            line-height: 43px;
+            padding: 8px 20px;
+            background-color: black;
+            border: 2px black solid;
+            display: flex;
+
+
+
+        }
+
+        #main-part1 .advertise .ad-pic-word .buynow>div>div {
+            line-height: normal;
+        }
+
+
+        #main-part1 .advertise .ad-pic-word .buynow>div:nth-child(1) {
+          text-decoration: white 2px;
+
+        }
+
+        #main-part1 ul li .buynow:hover div:nth-child(2) {
+            margin-left: 10px;
+            transition: 1s;
+
+
+        }
+
+
+        #main-part1 .advertisepic {
+            display: block;
+            width: 100%;
+            max-width: 2048px;
+            margin: auto;
+        }
+
+        #main-part1 .advertisepic2 {
+            display: none;
+            width: 100%;
+            margin: auto;
+        }
+
+        #main-part1 .advertisepic3 {
+            display: none;
+            width: 100%;
+            margin: auto;
+        }
+
+        #main-part1 .advertise:hover .ad-btn {
+            display: block;
+            line-height: 42px;
+            text-align: center;
+            font-size: 15px;
+            -webkit-box-shadow: 6px 4px 16px 0px rgba(0, 0, 0, 0.14);
+            box-shadow: 6px 4px 16px 0px rgba(0, 0, 0, 0.14);
+            background: #F7F7F7;
+        }
+
+        .ad-btn {
+            width: 42px;
+            height: 42px;
+            background-color: rgb(247, 247, 247);
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid transparent;
+            display: none;
+        }
+
+        .change-page-1 {
+
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+
+        }
+
+        .change-page-2 {
+
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+
+        }
+
+
+
+        #main-part1 .advertisebar {
+            width: 100%;
+            height: 177px;
+            padding-top: 48px;
+        }
+
+        #main-part1 .advertisebar ul {
+            width: fit-content;
+            margin: auto;
+
+        }
+
+        #main-part1 .advertisebar .ad-bar1 li {
+            float: left;
+            padding: 12px 6px;
+            text-align: center;
+            border: 2px white solid;
+        }
+
+        #main-part1 .advertisebar .ad-bar2 li {
+            padding: 12px 6px;
+            border: 2px white solid;
+
+        }
+
+        #main-part1 .advertisebar .ad-bar1 img {
+            height: 40px;
+            margin-bottom: 6px;
+        }
+
+        #main-part1 .advertisebar .ad-bar2 img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: block;
+            float: left;
+        }
+
+        #main-part1 .advertisebar ul .word {
+            line-height: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            margin: -4px 21px 0 22px;
+            max-width: 125px;
+        }
+
+        #main-part1 .advertisebar ul .word2 {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 20px;
+
+        }
+
+        #main-part1 .advertisebar li:hover {
+            text-decoration: black 2px underline;
+        }
+
+        body #main-part1 .advertisebar .ad-bar2 {
+            display: none;
+        }
+
+
+
+        #main-part2 {
+            width: 100%;
+            display: flex;
+            height: fit-content;
+            padding: 0 5%;
+        }
+
+        .article-area1 {
+            margin: 0 -12px 0;
+
+            justify-content: center;
+        }
+
+        #main-part2 ul {
+            display: flex;
+            flex-wrap: wrap;
+            height: fit-content;
+        }
+
+        #main-part2 ul li {
+            margin: 48px 0 0 0;
+            width: 25%;
+            float: left;
+            padding: 0 12px;
+
+        }
+
+        #main-part2 ul li img {
+            width: 100%;
+
+
+        }
+
+        #main-part2 ul li .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 37px 0 0 0;
+            padding: 1px 12px 2px 0;
+
+
+        }
+
+        #main-part2 ul li .text {
+            font-size: 15px;
+        }
+
+        #main-part2 ul li .buynow {
+            font-size: 15px;
+            border: 2px white solid;
+            padding: 10px 3px 7px 0;
+            color: rgb(0, 103, 184);
+            font-weight: 600;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #main-part2 ul li .buynow:hover div:nth-child(1) {
+            padding-bottom: 1px;
+            border-bottom: rgb(0, 103, 184) 2px solid;
+
+
+        }
+
+        #main-part2 ul li .buynow:hover div:nth-child(2) {
+            margin-left: 10px;
+            transition: 1s;
+
+
+        }
+
+        #main-part2 .tag6-1 {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        #main-part2 .tag6-1 .buynow {
+            padding: 10px 16px 7px 0;
+
+        }
+
+
+
+
+        #main-part3 {
+            max-width: 2048px;
+            padding: 0 5%;
+            width: 100%;
+
+        }
+
+        #main-part3 .advertise {
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+        }
+
+        #main-part3 .advertisepic {
+            height: 100%;
+            width: 100%;
+            max-width: 2048px;
+            margin: auto;
+            padding-top: 48px;
+            display: block;
+        }
+
+        #main-part3 .advertisepic2 {
+            display: none;
+        }
+
+        #main-part3 .advertisepic3 {
+            display: none;
+        }
+
+
+
+
+        #main-part3 .advertise .ad-pic-word {
+            width: 88%;
+            position: absolute;
+            top: calc(50% - 68.5px);
+            left: 6%;
+            transform: translate(-50% -50%);
+        }
+
+        #main-part3 .advertise .ad-pic-word .title {
+            margin: -3px 0 0 0;
+            padding: 0 0 3px 0;
+            font-size: 34px;
+            font-weight: 600;
+
+        }
+
+        #main-part3 .advertise .ad-pic-word .text {
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: 400;
+
+        }
+
+
+
+        #main-part3 .advertise .ad-pic-word .buynow {
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 12px 2px 0 0;
+            height: 55px;
+            color: white;
+
+        }
+
+        #main-part3 .advertise .ad-pic-word .buynow span {
+            line-height: 43px;
+            padding: 8px 20px;
+            background-color: black;
+            border: 2px black solid;
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #main-part4 {
+            display: inline-block;
+            width: 100%;
+            height: fit-content;
+            padding: 0 5%;
+
+        }
+
+        #main-part4 .part4-header {
+            padding-top: 48px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .article-area2 {
+            margin: -36px -12px 0;
+            display: flex;
+            display: inline-block;
+            height: fit-content;
+            justify-content: center;
+        }
+
+        #main-part4 ul li {
+            margin: 48px 0 0 0;
+            width: 25%;
+            float: left;
+            padding: 0 12px;
+
+        }
+
+
+        #main-part4 ul li img {
+            width: 100%;
+        }
+
+        #main-part4 ul li .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 37px 0 0 0;
+            padding: 1px 12px 2px 0;
+
+
+        }
+
+        #main-part4 ul li .text {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        #main-part4 ul li .buynow {
+            font-size: 15px;
+            border: 2px white solid;
+            padding: 10px 3px 7px 0;
+            color: rgb(0, 103, 184);
+            font-weight: 600;
+            display: flex;
+
+
+        }
+
+        #main-part4 ul li .buynow:hover div:nth-child(1) {
+            padding-bottom: 1px;
+            border-bottom: rgb(0, 103, 184) 2px solid;
+
+
+        }
+
+        #main-part4 ul li .buynow:hover div:nth-child(2) {
+            margin-left: 10px;
+            transition: 1s;
+
+
+        }
+
+
+
+        #main-socialmedia {
+            padding: 48px 5% 0 5%;
+            display: flex;
+
+
+        }
+
+        #main-socialmedia .text {
+            color: gray;
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 4px;
+            padding: 0 12px 0 0;
+            float: left;
+
+        }
+
+        #main-socialmedia .icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+        #main-socialmedia #FB.icon {
+            background-image: url(./img/FB.jpg);
+        }
+
+        #main-socialmedia #yt.icon {
+            background-image: url(./img/YT.jpg);
+        }
+
+        #main-socialmedia #FB.icon:hover {
+            background-image: url(./img/FB-hover.jpg);
+        }
+
+        #main-socialmedia #yt.icon:hover {
+            background-image: url(./img/YT-hover.jpg);
+        }
+
+
+        footer {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.9);
+            background-color: rgb(242, 242, 242);
+            margin: 50px auto 0 auto;
+        }
+
+        footer .container .footer-top {
+            width: 100%;
+            padding: 0% 5%;
+            max-width: 1789.5px;
+            margin: auto;
+        }
+
+        .footer-top .footer-top-list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .footer-top .footer-top-list li {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .footer-top .footer-top-list li:hover {
+            text-decoration: black 1px underline;
+        }
+
+        .footer-top-list .bottom-list {
+            float: left;
+            width: 16.6%;
+        }
+
+        .footer-top-list .new,
+        .business {
+            padding: 0 12px 0 0;
+        }
+
+        .footer-top-list .store,
+        .edu,
+        .developer,
+        .company {
+            padding: 0 12px;
+        }
+
+        .footer-top-list .bottom-list ul li {
+            font-size: 11px;
+            line-height: 16px;
+            padding: 8px 0;
+        }
+
+
+
+
+        .footer-top .footer-title {
+            font-size: 15px;
+            font-weight: 600;
+            padding: 36px 0 4px 0;
+        }
+
+        .footer-bottom {
+            padding: 30px 5% 16px;
+            max-width: 1789.5px;
+            margin: auto;
+        }
+
+        .taiwan {
+            font-size: 11px;
+            line-height: 16px;
+            float: left;
+        }
+
+        .footer-bottom .contact {
+            float: right;
+        }
+
+        .footer-bottom ul li {
+            line-height: 16px;
+            font-size: 11px;
+            padding: 0 24px 4px 0;
+            float: left;
+        }
+
+        .footer-bottom .language img {
+            float: left;
+            margin: 0 10px 0 0;
+        }
+
+        @media screen and (min-width: 1780px) {
+            body #nav-right {
+                width: 402px;
+            }
+
+        }
+
+        @media screen and (max-width: 1400px) {
+            body #nav {
+                padding: 0 5%;
+            }
+
+            body #nav-right {
+                width: 270px;
+            }
+
+            body #nav-right .nav-list li .nav-left-3 {
+                display: none;
+            }
+
+            body #nav-right .nav-list li {
+                margin: 0;
+            }
+
+            body #nav-right .nav-list li .nav-right-icon {
+                width: 23px;
+                height: 23px;
+                margin-right: 13px;
+            }
+
+            body #nav-right .nav-list .all {
+                margin-right: 34px;
+            }
+
+            body #nav-center .nav-list li {
+                margin: 1px 0 0 0;
+                border: transparent 1px solid;
+
+            }
+
+
+
+        }
+
+        @media screen and (max-width: 1398px) {
+            .hide-menu {
+                margin-left: -725px;
+
+                width: 1023px;
+                display: flex;
+                flex-wrap: wrap;
+                display: none;
+            }
+
+            #main-part1 .advertise .ad-pic-word .title {
+
+                font-size: 24px;
+
+            }
+
+            #main-part1 .advertise .ad-pic-word {
+
+                width: 88%;
+                position: absolute;
+                top: 50%;
+                left: 6%;
+                transform: translate(0, -50%);
+            }
+
+            #main-part3 .advertise .ad-pic-word .title {
+
+                font-size: 24px;
+
+            }
+
+            #main-part3 .advertise .ad-pic-word {
+
+                width: 88%;
+                position: absolute;
+                top: calc(50% - 63px);
+                left: 6%;
+                transform: translate(-50% -50%);
+            }
+
+
+        }
+
+
+
+
+        @media screen and (max-width: 1080px) {
+            body #nav {
+                padding: 0 24px 2px 24px;
+            }
+
+            body #main-part1 {
+                padding: 0;
+            }
+
+            #main-part1 .advertisepic {
+                display: none;
+
+            }
+
+            #main-part1 .advertisepic2 {
+                display: block;
+                width: 100%;
+                margin: auto;
+            }
+
+            body #main-part2 ul li {
+                width: 50%;
+            }
+
+
+
+            #main-part3 {
+                padding: 0px 0;
+            }
+
+
+            #main-part3 .advertisepic {
+                display: none;
+
+            }
+
+            #main-part3 .advertisepic2 {
+                display: block;
+                width: 100%;
+                margin: auto;
+            }
+
+            body #main-part4 ul li {
+                width: 50%;
+            }
+
+            footer .footer-top {
+                padding: 0 12px;
+            }
+
+            .footer-top-list .bottom-list {
+                float: left;
+                width: 33%;
+                padding: 0 12px;
+            }
+        }
+
+
+        @media screen and (max-width: 1021px) {
+            .hide-menu {
+                margin-left: -546px;
+                width: 818px;
+
+            }
+        }
+
+
+
+        @media screen and (max-width: 960px) {
+
+            body #nav-center {
+                width: calc(100% - 407px);
+            }
+
+        }
+
+
+
+        @media screen and (max-width: 910px) {
+
+            body #nav-center .nav-list .Xbox,
+            .help {
+                display: none;
+            }
+
+            body #nav-center .nav-list .more {
+                display: block;
+
+            }
+
+        }
+
+
+        @media screen and (max-width: 860px) {
+            body #nav-center .nav-list .Surface {
+                display: none;
+            }
+
+
+            #nav {
+                display: none;
+            }
+
+            body #nav2 {
+                display: block;
+            }
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            body #main-part1 {
+                padding: 0;
+            }
+
+            body #main-part1 .advertisebar .ad-bar1 {
+                display: none;
+            }
+
+            body #main-part1 .advertisebar .ad-bar2 {
+                display: block;
+            }
+
+            body #main-part1 .advertisebar {
+                height: 194px;
+                padding: 48px 5% 0 5%;
+            }
+
+            body #main-part1 .advertisebar ul {
+                float: left;
+
+            }
+
+            #main-part1 .advertise .ad-pic-word .title {
+
+                font-size: 20px;
+
+            }
+
+            #main-part1 .advertise .ad-pic-word {
+                position: static;
+                transform: none;
+                height: 340px;
+                padding-top: 102.5px;
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                background-color: rgb(230, 230, 230);
+
+            }
+
+            #main-part1 .advertise .ad-pic-word .text {
+                margin-top: 0px;
+                font-size: 15px;
+                font-weight: 400;
+
+
+            }
+
+            #main-part1 .advertise .ad-pic-word .buynow {
+                margin-top: 2px;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px 2px 0 0;
+                height: 55px;
+                color: white;
+
+
+            }
+
+            #main-part1 .advertisepic2 {
+                display: none;
+
+            }
+
+            #main-part1 .advertisepic3 {
+                display: block;
+                width: 100%;
+                margin: auto;
+            }
+
+            #main-part3 .advertise .ad-pic-word .title {
+
+                font-size: 20px;
+
+            }
+
+            #main-part3 .advertise .ad-pic-word {
+                background-color: rgb(230, 230, 230);
+
+                position: static;
+                transform: none;
+                height: 340px;
+                padding-top: 102.5px;
+                width: 100%;
+                margin: auto;
+                text-align: center;
+            }
+
+            #main-part3 .advertise .ad-pic-word .text {
+                margin-top: 0px;
+                font-size: 15px;
+                font-weight: 400;
+
+
+            }
+
+            #main-part3 .advertise .ad-pic-word .buynow {
+                margin-top: 2px;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px 2px 0 0;
+                height: 55px;
+                color: white;
+
+            }
+
+            #main-part3 .advertisepic2 {
+                display: none;
+
+            }
+
+            #main-part3 .advertisepic3 {
+                display: block;
+                width: 100%;
+                margin: auto;
+            }
+
+
+            .footer-bottom ul li {
+
+                padding: 6px 4px 0 6px;
+
+            }
+
+
+            .footer-bottom .contact {
+                float: none;
+            }
+        }
+
+
+
+
+
+        @media screen and (max-width: 540px) {
+            body #main-part2 ul li {
+                width: 100%;
+            }
+
+            body #main-part4 ul li {
+                width: 100%;
+            }
+
+            .footer-top-list .bottom-list {
+                width: 100%;
+                padding: 0 12px;
+            }
+
+            .footer-bottom .contact {
+                float: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="nav">
+            <div class="container">
+                <div class="nav-logo"></div>
+                <div id="nav-center">
+                    <ul class="nav-list">
+
+                        <li>Microsoft 365</li>
+                        <li>Office</li>
+                        <li>Windows</li>
+                        <li class="Surface">Surface</li>
+                        <li class="Xbox">XboX</li>
+                        <li class="help">支援</li>
+                        <li class="more"><span>更多</span><img src="./img/down.jpg" alt=""></li>
+                    </ul>
+                </div>
+
+                <div id="nav-right">
+                    <ul class="nav-list">
+                        <input type="checkbox" id="all-btn">
+                        <label for="all-btn">
+                            <li class="all">
+
+                                <span>所有 Microsoft</span>
+                                <img src="./img/down.jpg" alt="">
+                            </li>
+                        </label>
+                        <div class="hide-menu">
+                            <li id="all-menu">
+                                <ul class="hide-menu1">
+                                    <li>軟體</li>
+                                    <li>OneDrive</li>
+                                    <li>Outlook</li>
+                                    <li>Skype</li>
+                                    <li>OneNote</li>
+                                    <li>Microsoft Teams</li>
+                                </ul>
+                                <ul class="hide-menu1">
+                                    <li>個人電腦和設備</li>
+                                    <li>選購Xbox</li>
+                                    <li>電腦配件</li>
+
+                                </ul>
+                                <ul class="hide-menu1">
+                                    <li>娛樂</li>
+                                    <li>Xbox Game Pass Ultimate</li>
+                                    <li>Xbox Live Gold</li>
+                                    <li>Xbox 與遊戲</li>
+                                    <li>電腦遊戲</li>
+                                    <li>Windows 遊戲</li>
+                                </ul>
+                                <ul class="hide-menu1">
+                                    <li>商務適用</li>
+                                    <li>Microsoft Azure</li>
+                                    <li>Microsoft Dynamics 365</li>
+                                    <li>Microsoft 365</li>
+                                    <li>Microsoft Industry</li>
+                                    <li>資料平台</li>
+                                    <li>Power Platform</li>
+                                    <li>選購商務版</li>
+                                </ul>
+                                <ul class="hide-menu1">
+                                    <li>Developer & IT</li>
+                                    <li>.NET</li>
+                                    <li>Visual Studio</li>
+                                    <li>Windows Server</li>
+                                    <li>開發 Windows 應用程式</li>
+                                    <li>文件</li>
+                                    <li>Power Apps</li>
+
+                                </ul>
+                                <ul class="hide-menu1">
+                                    <li>其他</li>
+                                    <li>Microsoft Rewords</li>
+                                    <li>免費下載與安全性</li>
+                                    <li>教育</li>
+                                    <li>禮品卡</li>
+                                    <li>Licensing</li>
+
+
+                                </ul>
+
+                            </li>
+                            <div class="see-map">
+                                <div class="map">檢視網站地圖</div>
+                            </div>
+                        </div>
+                        <li class="search">
+                            <span class=" nav-left-3">搜尋</span>
+                            <img class="nav-right-icon" src="./img/search 02.jpg" alt="">
+                        </li>
+                        <li class="cart">
+                            <span class=" nav-left-3">購物車</span>
+                            <img class="nav-right-icon" src="./img/cart 02.jpg" alt="">
+
+                        </li>
+                        <li>
+                            <span class="login nav-left-3">登入</span>
+                        </li>
+                        <div class="nav-right-logo"></div>
+                    </ul>
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <div id="nav2">
+            <div class="nav-logo"></div>
+            <div class="left-bottom">
+            </div>
+
+            <div class="nav2-right">
+                <div class="search"></div>
+                <div class="login"></div>
+                <div class="cart"></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="main-part1" class="container">
+            <div class="advertise">
+                <img class="advertisepic" src="./img/computer.jpg" alt="">
+                <img class="advertisepic2" src="./img/computer2.jpg" alt="">
+                <img class="advertisepic3" src="./img/computer3.jpg" alt="">
+                <div class="ad-pic-word">
+                    <div class="title">Surface Laptop 3</div>
+                    <div class="text">每天使用的完美型筆記型電腦，速度比以往更快</div>
+                    <div class="buynow">
+                        <div>
+                            <div>立即選購</div>
+                            <div>＞</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="change-page-1 ad-btn">＜</div>
+                <div class="change-page-2 ad-btn">＞</div>
+
+            </div>
+            <div class="advertisebar">
+                <ul class="ad-bar1">
+                    <li>
+
+                        <div class="365"><img src="./img/365.jpg" alt=""><br>
+                            <div class="word">選擇您的Microsoft 365</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="surface">
+                            <img src="./img/surface.jpg" alt=""><br>
+                            <div class="word">選購 Surface 裝置</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="win10">
+                            <img src="./img/win10.jpg" alt=""><br>
+                            <div class="word">選購 Windows 10</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="ad-bar2">
+                    <li>
+
+                        <img src="./img/365.jpg" alt="">
+                        <span class="word2">選擇您的 Microsoft 365</span>
+
+                    </li>
+                    <li>
+
+                        <img src="./img/surface.jpg" alt="">
+                        <span class="word2">選購 Surface 裝置</span>
+
+                    </li>
+                    <li>
+
+                        <img src="./img/win10.jpg" alt="">
+                        <span class="word2">選購 Windows 10</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="main-part2" class="container">
+            <div class="article-area1">
+                <ul>
+                    <li>
+                        <div class="article">
+
+                            <img src="./img/article pic1.jpg" alt="">
+                            <div class="title">Surface Laptop Go</div>
+                            <div class="text">運用時尚和效能兼具、最輕巧的 Surface 筆記型電腦，善加利用每一天。</div>
+                            <div class="buynow">
+                                <div>立即選購</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic2.jpg" alt="">
+                            <div class="title">Microsoft 365</div>
+                            <div class="text">進階版 Office 應用程式、額外的雲端儲存空間、進階安全性等功能，全都在一個方便的訂閱中。</div>
+                            <div class="tag6-1">
+                                <div class="buynow">
+                                    <div>最多可供 6 人使用</div>
+                                    <div>＞</div>
+                                </div>
+                                <div class="buynow">
+                                    <div>適合 1 人使用</div>
+                                    <div>＞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic3.jpg" alt="">
+                            <div class="title">Xbox Game Pass Ultimate</div>
+                            <div class="text">Xbox Live Gold 和超過 100 款高品質的主機遊戲和電腦遊戲。 與好友同樂，並探索下一個最愛遊戲。</div>
+                            <div class="buynow">
+                                <div>立即加入</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic4.jpg" alt="">
+                            <div class="title">Microsoft Edge</div>
+                            <div class="text">在您瀏覽時提供世界級的效能，以及更多的隱私、更充足的生產力與更高的價值。</div>
+                            <div class="buynow">
+                                <div>立即下載</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-part3" class="container">
+            <div class="advertise">
+                <img class="advertisepic" src="./img/woman.jpg">
+                <img class="advertisepic2" src="./img/woman2.jpg">
+                <img class="advertisepic3" src="./img/woman3.jpg">
+
+                <div class="ad-pic-word">
+                    <div class="title">MicroSoft OneDrive</div>
+                    <div class="text">
+
+                        將檔案和相片儲存到 OneDrive，即可隨時隨地從任何裝置存取</div>
+                    <div class="buynow"><span>
+                            深入了解＞</span></div>
+                </div>
+            </div>
+        </div>
+        <div id="main-part4">
+            <div class="part4-header">適用於商務</div>
+            <div class="article-area2">
+                <ul>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic5.jpg" alt="">
+                            <div class="title">適用於商務的 Surface</div>
+                            <div class="text">無論從事哪種工作，都有一款有助於成功的 Surface。</div>
+                            <div class="buynow">
+                                <div>立即選購</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic6.jpg" alt="">
+                            <div class="title">Microsoft 365 商務版</div>
+                            <div class="text">透過功能強大的應用程式提高生產力、聯繫和安全，始終領先一步。</div>
+                            <div class="buynow">
+                                <div>立即選購</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic7.jpg" alt="">
+                            <div class="title">Microsoft Teams</div>
+                            <div class="text">聊天、開會、通話和共同作業。</div>
+                            <div class="buynow">
+                                <div>深入開會</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article">
+                            <img src="./img/article pic8.jpg" alt="">
+                            <div class="title">Microsoft Viva 簡介</div>
+                            <div class="text">探索新的員工體驗平台，其設計旨在讓人員在工作時聯繫、專注、學習和成長。</div>
+                            <div class="buynow">
+                                <div>深入了解</div>
+                                <div>＞</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-socialmedia" class="container">
+            <div class="text">關注Microsoft</div>
+            <div id="FB" class="icon"></div>
+            <div id="yt" class="icon"></div>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-top-list">
+                    <div class="bottom-list new">
+                        <ul>
+                            <div class="footer-title">最新動向</div>
+                            <li>Microsoft 365</li>
+                            <li>Surface Go</li>
+                            <li>Surface Book 2</li>
+                            <li>Surface Pro</li>
+                            <li>Windows 10 應用程式</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-list store">
+                        <ul>
+                            <div class="footer-title">Microsoft Store
+                            </div>
+                            <li>帳戶設定檔</li>
+                            <li>下載中心</li>
+                            <li>Microsoft Store 支援</li>
+                            <li>退貨/退款</li>
+                            <li>訂單追蹤</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-list edu">
+                        <ul>
+                            <div class="footer-title">教育
+                            </div>
+                            <li>Microsoft 在教育領域的應用</li>
+                            <li>學生適用的 Office</li>
+                            <li>學校適用的 Office 365</li>
+                            <li>Microsoft Azure 在教育領域的應用
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-list business">
+                        <ul>
+                            <div class="footer-title">企業
+                            </div>
+                            <li>Azure</li>
+                            <li>AppSource</li>
+                            <li>汽車</li>
+
+                            <li>政府機構
+                            </li>
+                            <li>醫療保健</li>
+                            <li>製造</li>
+                            <li>金融服務</li>
+                            <li>零售</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-list developer">
+                        <ul>
+                            <div class="footer-title">開發人員
+                            </div>
+                            <li>Microsoft Visual Studio</li>
+                            <li>Windows 開發人員中心</li>
+                            <li>開發人員中心</li>
+                            <li>Microsoft 開發人員計畫</li>
+                            <li>Channel 9</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-list company">
+                        <ul>
+                            <div class="footer-title">公司
+                            </div>
+                            <li>人才招募</li>
+                            <li>公司新聞</li>
+                            <li>Microsoft 隱私權</li>
+                            <li>投資者</li>
+                            <li>安全性</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="language"><img src="./img/earth.jpg" alt="">
+                    <div class="taiwan">中文（台灣）</div>
+                    <div class="contact">
+                        <ul>
+                            <li>聯絡 Microsoft</li>
+                            <li>隱私權</li>
+                            <li>使用規定</li>
+                            <li>商標</li>
+                            <li>有關我們的廣告訊息</li>
+                            <li>Microsoft 2021</li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+    </footer>
+
+
+
+</body>
+
+</html>
