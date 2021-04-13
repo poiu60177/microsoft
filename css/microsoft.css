@@ -800,6 +800,7 @@ footer .container .footer-top {
     padding: 30px 5% 16px;
     max-width: 1789.5px;
     margin: auto;
+    
 }
 
 .taiwan {
@@ -808,8 +809,7 @@ footer .container .footer-top {
     float: left;
 }
 
-.footer-bottom .contact {
-    float: right;
+.footer-bottom .contact {float: right;
 }
 
 .footer-bottom ul li {
@@ -912,6 +912,7 @@ footer .container .footer-top {
         display: none;
     }
     #main-part3 .advertisepic2 {
+        padding-top: 48px;
         display: block;
         width: 100%;
         margin: auto;
@@ -919,13 +920,20 @@ footer .container .footer-top {
     body #main-part4 ul li {
         width: 50%;
     }
-    footer .footer-top {
+    #main-socialmedia {
+        padding: 48px 24px 0 24px;
+        display: flex;
+    }
+    footer .container .footer-top {
         padding: 0 12px;
     }
     .footer-top-list .bottom-list {
         float: left;
         width: 33%;
         padding: 0 12px;
+    }
+    .footer-bottom{
+       padding: 30px 24px 16px ;
     }
 }
 
@@ -1019,6 +1027,7 @@ footer .container .footer-top {
         display: none;
     }
     #main-part1 .advertisepic3 {
+        
         display: block;
         width: 100%;
         margin: auto;
@@ -1055,6 +1064,7 @@ footer .container .footer-top {
         display: none;
     }
     #main-part3 .advertisepic3 {
+        padding-top: 48px;
         display: block;
         width: 100%;
         margin: auto;
