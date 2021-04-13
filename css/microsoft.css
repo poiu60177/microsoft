@@ -21,12 +21,9 @@ li {
     height: 100%;
 }
 
-.flex {
-    display: flex;
-    justify-content: center;
-}
 
 #nav {
+    display: flex;
     background-color: rgb(255, 255, 255);
     height: 54px;
     width: 100%;
@@ -70,8 +67,9 @@ li {
     display: none;
 }
 
-.nav-list li:hover {
-    text-decoration: black 2px underline;
+#nav-center .nav-list li:hover {
+    border-bottom: 2px black solid;
+    padding-bottom: 1px;
 }
 
 #nav-right {
@@ -127,7 +125,7 @@ li {
     display: none;
 }
 
-#nav2-menu {
+.nav2-menu {
     position: absolute;
     top: 51px;
     width: 100%;
@@ -136,7 +134,7 @@ li {
     display: none;
 }
 
-#nav2-menu li {
+.nav2-menu li {
     padding: 14px 24px 15px 15px;
     margin: 1px;
     border-bottom: 1px rgba(119, 119, 119, 0.164) solid;
@@ -144,14 +142,13 @@ li {
     height: 51px;
 }
 
-#nav2-menu li:last-child {
+.nav2-menu li:last-child {
     border-bottom: 1.5px rgb(0, 0, 0) solid;
 }
 
 .left-bottom {
     width: 48px;
     height: 48px;
-    float: left;
     padding: 6px 0 8px;
     margin: 1px 2px;
     background-image: url(../img/line.jpg);
@@ -159,10 +156,7 @@ li {
     background-repeat: no-repeat;
 }
 
-#moblie-menu:checked~#nav2-menu{
-    display: block;
 
-}
 
 .nav2-right {
     position: relative;
@@ -174,7 +168,6 @@ li {
 #nav2 .nav-logo {
     width: 116px;
     height: 44px;
-    z-index: 5;
     position: absolute;
     left: calc(50% - 58px);
     top: 0%
@@ -519,16 +512,19 @@ body #main-part1 .advertisebar .ad-bar2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 44px;
 }
-
+#main-part2 ul li .buynow div:nth-child(2){
+    margin-left: 3px;
+}
 #main-part2 ul li .buynow:hover div:nth-child(1) {
     padding-bottom: 1px;
     border-bottom: rgb(0, 103, 184) 2px solid;
 }
 
 #main-part2 ul li .buynow:hover div:nth-child(2) {
-    margin-left: 10px;
-    transition: 1s;
+    margin-left: 6px;
+    transition: 0.5s;
 }
 
 #main-part2 .tag6-1 {
@@ -539,7 +535,9 @@ body #main-part1 .advertisebar .ad-bar2 {
 #main-part2 .tag6-1 .buynow {
     padding: 10px 16px 7px 0;
 }
-
+#main-part2 .tag6-1 .buynow:nth-child(1){
+    width: 170px;
+}
 #main-part3 {
     max-width: 2048px;
     padding: 0 5%;
@@ -598,6 +596,7 @@ body #main-part1 .advertisebar .ad-bar2 {
     height: 55px;
     color: white;
     display: flex;
+    
 }
 
 #main-part3 .advertise .ad-pic-word .buynow>div {
@@ -683,6 +682,11 @@ body #main-part1 .advertisebar .ad-bar2 {
     color: rgb(0, 103, 184);
     font-weight: 600;
     display: flex;
+    height: 44px;
+
+}
+#main-part4 ul li .buynow div:nth-child(2){
+    margin-left: 3px;
 }
 
 #main-part4 ul li .buynow:hover div:nth-child(1) {
@@ -691,7 +695,7 @@ body #main-part1 .advertisebar .ad-bar2 {
 }
 
 #main-part4 ul li .buynow:hover div:nth-child(2) {
-    margin-left: 10px;
+    margin-left: 6px;
     transition: 1s;
 }
 
@@ -933,6 +937,7 @@ footer .container .footer-top {
 }
 
 @media screen and (max-width: 960px) {
+
     body #nav-center {
         width: calc(100% - 407px);
     }
@@ -956,7 +961,12 @@ footer .container .footer-top {
         display: none;
     }
     body #nav2 {
+        display: flex;
+    }
+  
+    #mobile-menu:checked~.nav2-menu{
         display: block;
+    
     }
 }
 
