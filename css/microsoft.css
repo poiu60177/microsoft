@@ -105,7 +105,8 @@ li {
 }
 
 #nav-right ul .all {
-    margin-right: 30px;
+padding: 16px 5px 16px 15px;
+margin: 1px 15px 0 0;
 }
 
 #nav-right ul .search {
@@ -269,7 +270,9 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
 }
-
+#all-btn:checked~.all-microsoft>.all{
+    background-color: rgb(242, 242, 242);;
+}
 #all-btn:checked~.hide-menu {
     display: flex;
 }
@@ -477,7 +480,7 @@ main {
 }
 
 #main-part1 .advertisebar li:hover {
-    text-decoration: black 2px underline;
+    text-decoration: black 1px underline;
 }
 
 body #main-part1 .advertisebar .ad-bar2 {
@@ -863,7 +866,11 @@ text-decoration: underline 1.5px black;
         padding: 0 5%;
     }
     body #nav-right {
+        
         width: 270px;
+    }
+    body #nav-right .nav-list{
+        display: flex;
     }
     body #nav-right .nav-list li .nav-left-3 {
         display: none;
@@ -877,7 +884,7 @@ text-decoration: underline 1.5px black;
         margin-right: 13px;
     }
     body #nav-right .nav-list .all {
-        margin-right: 34px;
+        margin-right: 15px;
     }
     body #nav-center .nav-list li {
         margin: 1px 0 0 0;
@@ -1078,6 +1085,9 @@ text-decoration: underline 1.5px black;
     }
     #main-part3 .advertise .ad-pic-word .text {
         margin-top: 0px;
+        margin: auto;
+        width: unset;
+        max-width: calc(88% - 24px);
         font-size: 15px;
         font-weight: 400;
     }
