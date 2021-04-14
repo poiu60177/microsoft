@@ -1137,5 +1137,10 @@ text-decoration: underline 1.5px black;
     }
     .footer-bottom .contact {
         float: left;
+        margin: 12px 0 3px;
+        padding: 0;
     }
+    .footer-bottom .contact li{
+        padding: 6px 10px 0 0 ; 
+     }
 }
