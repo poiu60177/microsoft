@@ -547,7 +547,7 @@ body #main-part1 .advertisebar .ad-bar2 {
 }
 
 #main-part2 ul li .buynow:hover div:nth-child(2) {
-    margin-left: 6px;
+    margin-left: 10px;
     transition: 0.5s;
 }
 
@@ -719,8 +719,8 @@ body #main-part1 .advertisebar .ad-bar2 {
 }
 
 #main-part4 ul li .buynow:hover div:nth-child(2) {
-    margin-left: 6px;
-    transition: 1s;
+    margin-left: 10px;
+    transition: 0.5s;
 }
 
 #main-socialmedia {
@@ -763,7 +763,7 @@ body #main-part1 .advertisebar .ad-bar2 {
 
 footer {
     width: 100%;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgb(97, 97, 97);
     background-color: rgb(242, 242, 242);
     margin: 50px auto 0 auto;
 }
@@ -859,11 +859,21 @@ text-decoration: underline 1.5px black;
     body #nav-right {
         width: 402px;
     }
+    #nav-center .nav-list li {
+        float: left;
+        margin: 1px 0 0 0;
+        padding: 16px 8px 10px;
+        border: 1px white solid;
+    }
 }
 
 @media screen and (max-width: 1400px) {
     body #nav {
         padding: 0 5%;
+    }
+    #nav-center {
+        width: calc(100% - 420px);
+       
     }
     body #nav-right {
         
@@ -886,10 +896,7 @@ text-decoration: underline 1.5px black;
     body #nav-right .nav-list .all {
         margin-right: 15px;
     }
-    body #nav-center .nav-list li {
-        margin: 1px 0 0 0;
-        border: transparent 1px solid;
-    }
+    
 }
 
 @media screen and (max-width: 1398px) {
